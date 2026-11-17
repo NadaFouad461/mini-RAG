@@ -35,7 +35,7 @@ class DataController(BaseController):
         
     def get_clean_file_name(self,original_file_name:str):
         # Remove special characters and spaces from the original file name expect . and _
-        clean_file_name = re.sub(r'[^\W.]', '', original_file_name.strip())
+        clean_file_name = re.sub( r"[^\w.\- ]", '', original_file_name.strip())
         
         #replace spaces with underscores
         clean_file_name = clean_file_name.replace(" ", "_")
